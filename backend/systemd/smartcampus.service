@@ -1,0 +1,18 @@
+[Unit]
+Description=Gunicorn daemon for Smart Campus Flask Application
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/smart-campus/backend
+Environment="PATH=/home/ubuntu/smart-campus/venv/bin"
+ExecStart=/home/ubuntu/smart-campus/venv/bin/gunicorn \
+          --workers 3 \
+          --bind unix:/home/ubuntu/smart-campus/smartcampus.sock \
+          --access-logfile /var/log/gunicorn/access.log \
+          --error-logfile /var/log/gunicorn/error.log \
+          "app:create_app()"
+
+[Install]
+WantedBy=multi-user.target

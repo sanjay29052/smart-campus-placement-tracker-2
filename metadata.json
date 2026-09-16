@@ -1,0 +1,6 @@
+{
+  "name": "Smart Campus Monitoring System",
+  "description": "A cloud-based college campus management platform for student records, attendance tracking, announcements, and complaint management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
